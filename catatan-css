@@ -1,0 +1,261 @@
+# Mengenal CSS
+
+- Aturan CSS seluruhnya ditulis dengan cara :
+selector {
+    property: value;
+}
+
+contoh :
+
+h1 {
+    color: blue;
+}
+
+img {
+    width: 100px;
+    height: 200px;
+}
+
+# Cara Menggunakan CSS dengan benar di HTMl
+
+- Menulis style langsung pada element yang dituju. (tidak disarankan)
+- <style> element, menggunakan element style di element. lebih baik tapi tidak bisa digunakan banyak dokumen
+- external stylesheet memisahkan file css dari html. (Rekomendasi)
+
+# Sistem Warna - RGB dan Sistem Warna - Hexadesimal
+
+- named color
+- RGB
+- Hexadesimal
+
+# Mengenal Properti Text Pada Umumnya
+
+- text-align : digunakan untuk melakukan sets area seperti start,end,center,justify
+
+- font-weight
+- text-decoration
+- line-height
+- letter-spacing
+
+# Mengenal Ukuran pada CSS dengan Font
+
+- Relative : digunakan untuk website yang responsive mengikuti layar yang digunakan. property nya adalah :
+    - em
+    - rem 
+    - vh
+    - vw
+    - %
+    - etc
+
+- Absolute : digunakan untuk layar fix, property nya adalah :
+    - px
+    - pt
+    - cm
+    - in
+    - mm
+
+# Selector Menggunakan Attribute ID
+
+- menggunkan # dalam css
+- hanya boleh unik id 
+
+# Mengenal Descendant Selector
+
+Dapat digunakan untuk spesifik element di css
+
+misal : pilih seluruh a di dalam element li
+ - li a {
+    color : white;
+ }
+
+atau, misal : setiap class dengan paraghraph kasih attribute :
+- .namaclass p {
+    color : white;
+}
+
+# Mengenal Direct Descendant dan Ajdacent Selector
+
+# Mengenal attribute selector
+
+misal ada input, dn kita ingin mengubah text input tersebut di css.
+
+<input type="text" placeholder="Search">
+
+maka di css nya
+
+input[type="text"] {
+    color:red;
+}
+
+# Mengenal Pseudo Classes
+
+Psedudo Clasess dalah kata kunci yng ditmbahkan pada selector untuk memilih event element secara spesifik pad kondisi tertentu.
+
+- :active
+- :checked
+- :first
+- :hover
+- :nth-child
+- :nth-of-type
+
+# Mengenal Bagian Box Model pada Element
+
+Setiap bagian element pada css akan digambarkan dalam bentuk kotak
+seperti ada margin, border, padding, container.
+
+ - Border : Adalah bagian luar yang melapisi sebuah kotak element
+ - Padding : adalah jarak dari border kedalam konten box 
+ - Margin : adalah sebuah jarak antara keseluruhan border dan padding
+ ke content box yang lain
+
+dalam sebuah satu keutuhan content box, dapat kita atur lebar dan tinggi nya, jarak padding, lebar margin, dan border nya juga.
+
+# Mengenal properti border pada css
+
+Format penulisan baik itu border, padding, margin dll,
+selain bisa kita definisikan dengan contoh :
+ - padding-right : ;
+ - border-top : ;
+ - margin-left : ;
+
+dapat kita singkat dengan 1 kali penulisan. contoh :
+
+ - margin : 10px 10px 5px 5px;
+
+maka style akan diterapkan ke arah jarum jam, top,right,bottom,left
+
+- margin: 10px 10px 5px;
+
+maka style akan terisi : 10px atas, 10px kanan-kiri, 5px bawah
+
+jika 3, maka akan terisi ke 4 elemen, atas, kanan-kiri, bawah
+
+jika hanya 2, maka atas-bawah, kanan-kiri untuk tiap nilai 
+
+# Mengenal properti padding pada css
+
+Merupakan jarak dari konten ke border
+
+- Padding juga memiliki 4 bagian atas-bawah, kanan-kiri juga yang dapat kita set masing-masing bagian
+
+# Mengenal properti margin pada css
+
+Merupakan jarak dari suatu content border utuh ke content yang lain.
+
+- Margin juga memiliki 4 bagian atas-bawah, kanan-kiri juga yang dapat kita set masing-masing bagian
+
+# Mengenal properti display
+
+- Inline display : Merupakan display yang terus kesamping dan tidak akan mengambil jatah display sisa.
+
+contoh : <span>
+
+elemen dengan sifat inline tidak bisa dimodifikasi lebar nya dengan width : ;
+
+inline hanya bisa dimodifikasi padding dan margin nya, tetapi jarak kanan dan kiri nya, dan border yang diperbesar akan seakan behind.
+
+- Block Display : adalah display yang akan mengambil keseluruhan tampilan sampai ujung samping meskipun lebar nya tidak penuh.
+
+contoh : <h1>
+
+jika properti block ingin dijadikan inline kita bisa menggunakan seperti berikut :
+
+display : inline;
+
+dan jika kita ingin membuat sebuah content block jika diperkecil dan tidak muat satu halaman akan pindah kebawah bisa menggunakan
+
+display : inline-block;
+
+- tambahan untuk menghpus sebuah tampilan block atu inline bisa menggunakan display : none;
+
+# Apa itu flexbox
+
+Flexbox adalah salah satu metode dimensional layout untuk mengatur baris dan kolom
+
+kenapa 'flexbox' lentur?
+Secara dinamis flexbox membagi rung untuk element sebab itu dinamkan "flex"box
+
+Flexbox akan digunakan untuk mengatur lyout baik itu secara baris ataupun kolom.
+
+# Mengatur Urutan Element Dengan Flex Direction
+
+untuk mengimplementasiklan flex, kita tidak lakukan di content itu sendiri, melainkan di pembungkus nya, seperti <section id="content>
+
+kemudian id tersebut kita ubah dengan display: flex;
+
+flexbox memiliki direction dalam menampilkan konten diantaranya :
+flex-direction{
+- row
+- row-reverse
+- column
+- column-reverse
+}
+flexbox akan mengikuti lebar dan tinggi dari wadah nya.
+
+# Membagi Rata Jarak Horizontal Dengan Justify Content
+
+kita dapat membagi jarak antar content dengan flex, yang memiliki attribute diantaranya :
+
+justify-content: {
+- flex-start
+- flex-end
+- center
+- space-between
+- space-around
+- space-evenly
+}
+
+# Menampilkan Element Dengan Ukuran Sebenaranya Pada Flex
+
+Jika kita memiliki elemen div yang berisi konten, didalam sebuah container, panjang dan lebar dari content div tersebut tidak akan ditampilkan sepenuhnya melainkan akan sesuai panjang dan lebar dari container. Jik kita ingin menampilkan konten sebenarnya maka tampilan akan kita lakukan wrap. yang mana lebar dari konten akan ditampilkan dan ukuran dalam kontiner akan dipecah. 
+
+flex-wrap: wrap;
+
+# Mengatur Perataan Secara Vertikal Dengan Align Item
+
+# Mengatur Jarak Cross Axis dengan Align Content Dan Align Self
+
+dengan align-self kita bisa melakukan modifikasi per-item div untuk posisi nya
+
+div:nth-of-type(1) {
+    align-self: flex-start;
+}
+
+div:nth-of-type(3) {
+    align-self: flex-end;
+}
+
+div:nth-of-type(5) {
+    align-self: flex-start;
+}
+
+# Mengubah ukuran Element Flex
+
+Flex-sizing properties :
+
+flex-basis : mendifinisikan nilai awal dari elemen yng ada di dalam flex sesuai dengan direction nya.
+
+flex-grow : mengatur jumlah space element yng tersedia pada pembukusnya
+
+flex-shrink : Jika element lebih besar dari containrer-nya, maka mereka akan mengecil sesuai nilai yang kita berikan pada flex-shrink
+
+# Flex dengan sintaks yang lebih ringkas
+
+main .sidebar {
+    background-color: #003049;
+    /* flex : grow, shrink, basis */
+    flex: 1 2 300px;
+}
+
+main .content {
+    background-color: cadetblue;
+    flex: 2 1 800px;
+}
+
+
+# Memulai kehebatan media query
+
+media bisa mengatur range ketika layar berapa px maka tampilkan x, dengan ini kita bisa membuat lebih flexible.
+
+# Membuat Responsive Navigation
+
